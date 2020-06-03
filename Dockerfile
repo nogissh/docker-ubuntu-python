@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 MAINTAINER Toshiki Ohnogi, @nogissh, thetoshiki0419@gmail.com
 
-ENV HOME /workspace
+ENV HOME /root
 
 RUN apt-get update && \
     apt-get upgrade -y 
@@ -32,9 +32,3 @@ RUN eval "$(pyenv init -)"
 RUN pyenv install 3.7.0 && \
     pyenv global 3.7.0
 ENV PATH $PYENV_ROOT/shims:$PATH
-
-# Install initial python package
-RUN pip install --upgrade pip && \
-    pip install \
-        uwsgi \
-        gunicorn
