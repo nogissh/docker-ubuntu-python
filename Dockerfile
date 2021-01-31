@@ -24,11 +24,11 @@ RUN apt-get install -y \
         libmysqlclient-dev
 RUN rm -rf /var/lib/apt/lists/*
 
-# Setup Python 3.8
+# Setup Python 3.9
 RUN git clone git://github.com/yyuu/pyenv.git ~/.pyenv
 ENV PYENV_ROOT $HOME/.pyenv
 ENV PATH $PYENV_ROOT/bin:$PATH
 RUN eval "$(pyenv init -)"
-RUN pyenv install 3.8.3 && \
-    pyenv global 3.8.3
+RUN pyenv install 3.9.1 && \
+    pyenv global 3.9.1
 ENV PATH $PYENV_ROOT/shims:$PATH
