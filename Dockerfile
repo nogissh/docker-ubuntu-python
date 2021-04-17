@@ -13,7 +13,7 @@ RUN apt-get install -y \
         vim \
         nginx \
         wget \
-        cront \
+        cron \
         build-essential \
         libssl-dev \
         libbz2-dev \
