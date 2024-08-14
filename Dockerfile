@@ -22,7 +22,8 @@ RUN apt-get install -y \
         zlib1g-dev \
         sqlite3 \
         libsqlite3-dev \
-        libmysqlclient-dev
+        libmysqlclient-dev \
+        pkg-config
 RUN rm -rf /var/lib/apt/lists/*
 
 # Setup Python 3.12
