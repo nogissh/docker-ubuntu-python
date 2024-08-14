@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-LABEL mentainer "nogissh, thetoshiki0419@gmail.com"
+LABEL mentainer "nogissh, me@nogissh.com"
 
 ENV HOME /root
 
@@ -25,11 +25,11 @@ RUN apt-get install -y \
         libmysqlclient-dev
 RUN rm -rf /var/lib/apt/lists/*
 
-# Setup Python 3.9
-RUN git clone git://github.com/yyuu/pyenv.git ~/.pyenv
+# Setup Python 3.12
+RUN git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 ENV PYENV_ROOT $HOME/.pyenv
 ENV PATH $PYENV_ROOT/bin:$PATH
 RUN eval "$(pyenv init -)"
-RUN pyenv install 3.9.1 && \
-    pyenv global 3.9.1
+RUN pyenv install 3.12.5 && \
+    pyenv global 3.12.5
 ENV PATH $PYENV_ROOT/shims:$PATH
